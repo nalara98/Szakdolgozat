@@ -1,0 +1,18 @@
+.kontener{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 16px;
+}
+
+app-informacio{
+    min-width: 200px;
+    flex:1;
+    margin: 4px;
+}
+
+.actionbtn{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}

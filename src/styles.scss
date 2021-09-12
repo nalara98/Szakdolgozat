@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+html,
+body {
+  height: 100%;
+  background: #303030;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.max-width {/* button a bejelentekzésnél */
+  width: 100%;
+}
+
+.kozpont {/* bejelentkezés és regisztráció középre helyezése */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: stretch;
+}
+
+.bejelent,
+.regiszt {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (min-width: 768px) { /* bejelentkezés panel, media query használata mindig 100 de ha kijelző kisebb mint 768 px akkor legyen az alsó  */
+
+  .bejelent,
+  .regiszt {
+    max-width: 33em;
+    min-height: 40em;
+    height: auto;
+  }
+}
+
+

@@ -1,0 +1,11 @@
+.main-title, [mat-button]{ /* ez a mat mat-button részből jön erre tudok kocka zárojellel hivatkozni */
+    text-transform: capitalize;
+}
+
+[mat-button]:not(:last-child){  /* szeretném ha az összes gombon lenne margin jobbról kivéve az utolsón */
+    margin-right: 16px;
+}
+
+a[mat-button]{ /* A-ban megadott szöveg nagysága */
+    font-size: xx-large;
+}
