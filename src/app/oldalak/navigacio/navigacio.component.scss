@@ -1,11 +1,25 @@
-.main-title, [mat-button]{ /* ez a mat mat-button részből jön erre tudok kocka zárojellel hivatkozni */
+[mat-button] {
     text-transform: capitalize;
-}
-
-[mat-button]:not(:last-child){  /* szeretném ha az összes gombon lenne margin jobbról kivéve az utolsón */
+  }
+  
+  [mat-button]:not(:last-child) {
     margin-right: 16px;
-}
-
-a[mat-button]{ /* A-ban megadott szöveg nagysága */
+  }
+  
+  a[mat-button] {
     font-size: xx-large;
-}
+  }
+  
+  .active {
+    border-bottom: white 1px solid;
+    border-radius: 0;
+  } 
+  
+  mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+ 

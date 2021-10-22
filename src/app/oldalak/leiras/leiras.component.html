@@ -1,0 +1,27 @@
+<!-- így jelenik meg új lapon  -->
+
+<div class="valami"  *ngFor="let item of inData| async"><!-- ezzel kiválasztom az összes információt -->
+  <mat-card class="det-img" *ngIf = "(item.id == id)"> <!-- ezzel szürőm hogy csak azok az id jelnjenek meg  -->
+  
+  <div style="display: flex;">
+    <span style="flex: 1 1;"></span>
+    <button mat-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <span style="flex: 1 1;"></span>
+  <div class="det-title">
+ <h1>{{item.title}}</h1> 
+    <p>{{item.body}}</p> 
+  </div>
+  <button mat-button (click)="delete()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-button (click)="update()">
+    <mat-icon>update</mat-icon>
+  </button>
+</mat-card>
+
+</div>
+
+

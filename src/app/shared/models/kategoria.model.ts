@@ -3,5 +3,7 @@ export interface Kategoria {
     icon: string;
     value: string;
     color: string;
+    url: string;
+   
 }
 

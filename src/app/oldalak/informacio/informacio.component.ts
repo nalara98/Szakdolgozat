@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Informacio } from 'src/app/shared/models/informacio.model';
 
 @Component({
@@ -8,12 +8,17 @@ import { Informacio } from 'src/app/shared/models/informacio.model';
 })
 export class InformacioComponent implements OnInit {
 
-  @Input() informacio?: Informacio ;
+  @Input() informacio: Informacio = {} as any;
+  @Input() hasAction = true;
+  @Output() callFav = new EventEmitter<Informacio>();
+  @Output() getInformacio = new EventEmitter<Informacio>();
+  
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  
 
 }

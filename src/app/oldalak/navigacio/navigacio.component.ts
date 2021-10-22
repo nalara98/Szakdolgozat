@@ -1,19 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { INFORMACIOK } from 'src/app/shared/database/informacio.database';
+import { KATEGORIAK } from 'src/app/shared/database/kategoria.database';
 import { Kategoria } from 'src/app/shared/models/kategoria.model';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
+import { ThemeService } from 'src/app/services/thema.service';
+
 
 @Component({
   selector: 'app-navigacio',
   templateUrl: './navigacio.component.html',
   styleUrls: ['./navigacio.component.scss']
 })
-export class NavigacioComponent implements OnInit {
-  sKategoriaTitle?: string;
-  @Input() kivalasztottKategoria?: string;
-  @Input() kategoriak: Kategoria[] = []; /* üres tömb az értékee */
+export class NavigacioComponent  {
+  kategoriak =   KATEGORIAK;
+  
+    title = 'dark-theme-yt';
+    isDarkMode!: boolean;
+    showFiller = false;  
 
-  constructor() { }
+  constructor(private rout: Router,  private authServ: AuthService,private breakpointObserver: BreakpointObserver, private themeService: ThemeService) {
 
-  ngOnInit(): void {
+    this.themeService.initTheme();
+    this.isDarkMode = this.themeService.isDarkMode();
+   }
+
+  toggleDarkMode() {
+    this.isDarkMode = this.themeService.isDarkMode();
+
+    this.isDarkMode
+      ? this.themeService.update('light-mode')
+      : this.themeService.update('dark-mode');
+  }
+
+  kijelentkezes(): void{
+    this.authServ.kijelentkezes();/* ez a kijelentkezés függvény a serverből jön  */
+    this.rout.navigateByUrl('bejelentkezes');
+
   }
 
 }

@@ -1,0 +1,35 @@
+.det-title {
+    bottom: 0;
+  
+  }
+ .valami mat-card{
+  background-color:rosybrown;
+  flex: 1;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  /* min-height: 40vh; */
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+
+ }
+
+  /* .det-img {
+    display: flex;
+    min-height: 40vh;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 -50px 100px #000000;
+  } */

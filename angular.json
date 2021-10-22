@@ -36,16 +36,21 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
+            
+              
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/myjs/sodoku.js",
+              "src/assets/myjs/jquery-3.5.0.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -105,8 +110,12 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
+           
             ],
-            "scripts": []
+            "scripts": [
+              
+             
+            ]
           }
         }
       }

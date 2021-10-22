@@ -1,1 +1,17 @@
-<p>informacio-add works!</p>
+<form [formGroup]="form">
+  <h3>Tanácsok hozzáadása</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Cím</mat-label>
+    <input matInput placeholder="Például: Sok folyadék fogyaszát" focus formControlName="title" required>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <mat-label>Leírás</mat-label>
+    <textarea placeholder="A víz fogyasztás jó, mert" formControlName="body" matInput cdkTextareaAutosize
+      cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogReferenc.close()" class="margin-right">MÉGSEM</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+  </div>
+  
+</form>

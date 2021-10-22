@@ -10,7 +10,11 @@ import { NavigacioModule } from '../navigacio/navigacio.module';
 import { RegisztracioModule } from '../regisztracio/regisztracio.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { LeirasokAddModule } from '../leirasok-add/leirasok-add.module';
+import { FooldalRoutingModule } from './fooldal-routing.module';
+import { MatRipple, MatRippleModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ContainerModule } from 'src/app/shared/components/container/container.module';
 
 
 
@@ -22,7 +26,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [FooldalComponent],
   imports: [
-    CommonModule, FormsModule, MainModule,InformacioModule, BejelentkezesModule, JatekModule, NavigacioModule, RegisztracioModule, MatIconModule,MatButtonModule, MatDialogModule
+    CommonModule,  NavigacioModule,  FooldalRoutingModule,
+    
+    
+    MatRippleModule, MatToolbarModule, ContainerModule
+  
     
   ],
   exports: [FooldalComponent]

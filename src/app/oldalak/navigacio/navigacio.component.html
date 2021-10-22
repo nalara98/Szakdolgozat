@@ -1,36 +1,37 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <a mat-button>
-            Időskori demencia 
-        </a>
-        <button mat-button *ngFor="let item of kategoriak">
-            {{item.title}}&nbsp;
-            <mat-icon>{{item.icon}}</mat-icon>
-        </button>
-        <span style="flex: 1 1;"></span>
-        <button mat-button [matMenuTriggerFor]="menu">
-            Lakatos Merlon&nbsp;
-            <mat-icon>arrow_drop_down</mat-icon>
-          </button>
-      
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item disabled>
-              <mat-icon>person</mat-icon>
-              <span>Profil</span>
-            </button>
-            <button mat-menu-item disabled>
-              <mat-icon>settings</mat-icon>
-              <span>Beállítások</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>arrow_back</mat-icon>
-              <span>Kijelentkezés</span>
-            </button>
-          </mat-menu>
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-        <span class="main-title">{{sKategoriaTitle}}</span>
-        
-    </mat-toolbar-row> <!-- több sor megadása -->
-</mat-toolbar>
 
+<mat-toolbar >
+  <mat-toolbar-row>
+    <a mat-button [routerLink]="[ '/fooldal/main' ]">
+     Időskori demencia
+    </a>
+    <button mat-button *ngFor="let item of kategoriak" [routerLink]="[ item.url ]" routerLinkActive="active">
+      {{item.title}}&nbsp;
+      <mat-icon>{{item.icon}}</mat-icon>
+    </button>
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+     Menü
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink] ="['/profil']">
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </button>
+      <!-- <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Beállítások</span>
+      </button> -->
+      <button mat-menu-item (click)="kijelentkezes()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+
+    <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode" > <!-- a szín váltáshoz kell -->
+       Szín
+    </mat-slide-toggle>
+  </mat-toolbar-row>
+
+</mat-toolbar>

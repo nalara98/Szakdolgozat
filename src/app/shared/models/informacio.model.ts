@@ -1,5 +1,6 @@
 export interface Informacio {
-    id: number;
+    id: string;
     title: string;
     body: string;
+    
   }

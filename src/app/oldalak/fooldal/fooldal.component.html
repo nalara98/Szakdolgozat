@@ -1,11 +1,19 @@
-<span [ngSwitch]="oldal">
-    <span *ngSwitchCase="'fooldal'" >
-        <app-navigacio [kategoriak]="kategoriak"></app-navigacio>
+<app-navigacio></app-navigacio>
+<router-outlet></router-outlet>
+
+
+
+
+
+<!-- <span [ngSwitch]="oldal">
+    <span *ngSwitchCase="'fooldal'">
+        <app-navigacio [kivalasztottKategoria]="kategoria" [kategoriak]="kategoriak"
+            (kivalasztottKat)="onSelect($event)" (kivalasztottOldal)="oldal = $event"></app-navigacio>
         <span [ngSwitch]="kategoria">
             <span *ngSwitchCase="'informacio'" class="kontener">
-                <app-informacio *ngFor="let item of informaciok;" [informacio]="item" appOnHover></app-informacio>
-                <button mat-fab class="actionbtn" (click)="openLeirasok()"> <!-- kör alaku gomb egy ikon van benne általában -->
-                    <mat-icon>add</mat-icon>
+                <app-informacio *ngFor="let item of informaciok | async" [informacio]="item" ></app-informacio>
+                <button mat-fab class="action-btn" (click)="openLeirasok()">
+                  <mat-icon>add</mat-icon>
                 </button>
             </span>
 
@@ -14,17 +22,17 @@
 
             </span>
             <span *ngSwitchDefault class="kontener">
-                <app-main></app-main>
+                <app-main [kategoriak]="kategoriak" (kivalasztottKat)="onSelect($event)"></app-main>
             </span>
         </span>
     </span>
-    <span *ngSwitchCase="'regisztracio'" >
-        <app-regisztracio></app-regisztracio>
+    <span *ngSwitchCase="'regisztracio'">
+        <app-regisztracio (kivalasztottOldal)="oldal = $event"></app-regisztracio>
     </span>
 
 
 
     <span *ngSwitchDefault>
-        <app-bejelentkezes></app-bejelentkezes>
+        <app-bejelentkezes (kivalasztottOldal)="oldal = $event"></app-bejelentkezes>
     </span>
-</span>
+</span> -->

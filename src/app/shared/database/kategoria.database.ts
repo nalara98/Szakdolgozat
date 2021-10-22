@@ -1,18 +1,25 @@
 import { Kategoria } from "../models/kategoria.model";
 
-
 export const KATEGORIAK: Kategoria[] = [
+
     {
         title: 'Tanácsok',
-        icon: 'informaciok',
-        value: 'informaciok',
-        color: 'teal'
+        icon: 'informacio',
+        value: 'informacio',
+        color: 'teal',
+        url:'/fooldal/informaciok'
     },
+
     {
 
         title: 'Játék',
         icon: 'games',
-        value: 'game',
-        color: 'cyan'
-    }
+        value: 'jatek',
+        color: 'cyan',
+        url:'/fooldal/jatek'
+    },
+
+
+
+
 ]
