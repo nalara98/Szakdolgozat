@@ -10,6 +10,7 @@ import { LeirasokAddComponent } from '../leirasok-add/leirasok-add.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 
+import Swal from 'sweetalert2'
 
 
 
@@ -60,7 +61,7 @@ delete(){
   this.service.delete('informaciok', this.id )
 }
 
-update(){
+ update(){
  
   const dialogReferenc = this.dialog.open(UpdateComponent, {});
   // tslint:disable-next-line: deprecation
@@ -70,12 +71,61 @@ update(){
       informacio.id= this.id;
       this.service.update('informaciok',this.id, informacio);
      informacio.id= this.id;
+     
     }
   }, err => {
     console.warn(err);
   });
 }
-}
+ 
+opensweetalert(){
+  Swal.fire({
+    title: 'Biztosan törölni szeretné?',
 
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Igen szeretném',
+    cancelButtonText: 'Nem szeretném'
+  }).then((result)=>{
+    if (result.value){
+   this.delete();
+  
+    }else if (result.dismiss === Swal.DismissReason.cancel){
+      Swal.fire(
+        'Kilépés',
+        
+      )
+    }
+  })
+
+  
+
+}
+ 
+opensweetalert2(){
+  Swal.fire({
+    title: 'Biztos frissiteni szeretné?',
+ 
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Igen szeretném!',
+    cancelButtonText: 'Nem szeretném!'
+  }).then((result)=>{
+    if (result.value){
+   this.update();
+  
+    }else if (result.dismiss === Swal.DismissReason.cancel){
+      Swal.fire(
+        'Bezárás',
+       
+      )
+    }
+  })
+
+
+
+
+}
+}
   
 

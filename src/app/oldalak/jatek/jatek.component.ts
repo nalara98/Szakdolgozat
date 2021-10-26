@@ -38,6 +38,9 @@ declare const generateBoard:any;
 
 export class JatekComponent  {
   title='Játék';
+  show:boolean=false;
+
+
   callfun(){
   /* ezzel hívom meg a sodoku játékot */
      startGame(); 
@@ -48,6 +51,10 @@ export class JatekComponent  {
  
   stop(){ /* ezzel lehet az időt megállítani */
      stopTimer(); 
+  }
+
+  visibility(){
+    this.show=!this.show
   }
 
   audioObj = new Audio(); /* ezek a zenére vonatkoznak */

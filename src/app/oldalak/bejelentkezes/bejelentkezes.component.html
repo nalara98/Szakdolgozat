@@ -1,3 +1,4 @@
+<section class="background">
 <div class="kozpont">
     <mat-card class="bejelent">
         <form [formGroup]="form" (ngSubmit) = "bejelentkezes()">
@@ -18,7 +19,9 @@
             <div><button mat-button color="accent" (click)="navi('/regisztracio')">REGISZTRÁCIÓ</button></div>
             <br>
             <button type="submit" mat-raised-button color="primary" class="max-width" [disabled] = "form.invalid">BEJELENTKEZÉS</button>
-            
+            <button type="submit" mat-raised-button color="primary" (click)="navi('/jatek')">Most csak játszom!</button>
         </form>
     </mat-card>
 </div>
+
+</section>

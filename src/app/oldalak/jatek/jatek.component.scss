@@ -1,10 +1,31 @@
 #music{
-    margin-left: 50px;
+     margin-left: 50px; 
+     
 }
 
 #list{
     font-size: 20px;
 }
+
+.hiden{
+    display: none;
+}
+
+ .background{
+    background-image: url('image6.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 200%; margin: 0px; padding: 0px; 
+  
+  }  
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 5px;
+  }
+    
+
+  
+  
 /* mat-toolbar{
     background: #9499b7
 }

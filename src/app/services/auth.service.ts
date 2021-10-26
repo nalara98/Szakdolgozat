@@ -32,12 +32,11 @@ export class AuthService{
   }
   
    
-   
-   /* newPassword(newPassword: string) {
-    return this.afAuth.currentUser.then((user) => {
+    newPassword(newPassword: string) {
+    return this.angfAuth.currentUser.then((user:any) => {
       return user.updatePassword(newPassword);
     });
-  } */ /* ha egy bizonyos időn túl vagy bejelentkezve akkor újra be kell jelentkezni */
+  }  /* ha egy bizonyos időn túl vagy bejelentkezve akkor újra be kell jelentkezni */
 
     /*  newEmail(newEmail: string) {
        return this.afAuth.currentUser.then((user) => {

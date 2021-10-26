@@ -65,17 +65,15 @@ const easy = [
 
         generateBoard(board);
       
-        
+        id("number-container").classList.remove("hidden");
+        id("top_list").classList.remove("toplista");
+        id("newlist").classList.remove("ujtoplista");
 
         //Starts the timer
         startTimer();
         //Sets theme based on input
-        if (id("theme-1").checked){
-            qs("body").classList.remove("dark");
-        }
-        id("number-container").classList.remove("hidden");
-        id("top_list").classList.remove("toplista");
-        id("newlist").classList.remove("ujtoplista");
+      
+ 
 
     }
     function startTimer(){

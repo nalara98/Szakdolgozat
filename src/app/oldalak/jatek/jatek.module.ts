@@ -6,6 +6,9 @@ import { NavigacioModule } from '../navigacio/navigacio.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+
 
 
 
@@ -13,9 +16,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [JatekComponent],
   imports: [
-    CommonModule,  NavigacioModule, JatekRoutingMOdule, MatToolbarModule, MatIconModule,
+    CommonModule,  NavigacioModule, JatekRoutingMOdule, MatToolbarModule, MatIconModule, MatButtonModule, MatIconModule, 
 
-    MatDialogModule
+    MatDialogModule, MatRadioModule
   ],
   exports: [JatekComponent]
 })

@@ -1,3 +1,4 @@
+<section class="background">
 <div class="kozpont">
     <mat-card class="regiszt">
         <form [formGroup]="form" (ngSubmit)="regisztracio()">
@@ -13,14 +14,16 @@
               </mat-form-field>
               <mat-form-field class="max-width">
                 <mat-label>Jelszó</mat-label>
-                <input type="password" name="password" matInput placeholder="Jelszó" formControlName="jelszo1">
+                <input type="password" name="password" [type] = "hide ? 'password':'text'" matInput placeholder="Jelszó" formControlName="jelszo1">
                 <mat-hint align="end">min. hossz 6 / {{form.value.jelszo1.length}}</mat-hint>
+                <mat-icon  matSuffix (click) = "hide = !hide">{{hide ? 'visibility': 'visibility_off'}}</mat-icon>
               </mat-form-field>
               <mat-form-field class="max-width">
                 <mat-label>Jelszó újra</mat-label>
-                <input type="password" name="password" matInput #jelszo2 placeholder="Jelszó újra"
+                <input type="password" name="password" [type] = "hide ? 'password':'text'" matInput #jelszo2 placeholder="Jelszó újra"
                   formControlName="jelszo2">
                 <mat-hint align="end">min. hossz 6 / {{jelszo2.value.length}}</mat-hint>
+                <mat-icon  matSuffix (click) = "hide = !hide">{{hide ? 'visibility': 'visibility_off'}}</mat-icon>
               </mat-form-field>
               <mat-chip-list *ngIf="hiba">
                 <mat-chip color="warn" class="max-width" style="margin-top: 16px;" selected>
@@ -34,3 +37,5 @@
         </form>
     </mat-card>
 </div>
+
+</section>

@@ -56,14 +56,14 @@ export class BaseService <T extends { id?: string }> {
   }
 
   // tslint:disable-next-line: typedef
-  weakAdd(collectionName: string, data: T) {
+/*   weakAdd(collectionName: string, data: T) {
     return this.afs.collection(collectionName).add(data).then(
       result => { console.log(result); }, err => { console.log(err); }).finally(() => { console.log('finally'); });
-  }
+  } */
 
-  getById(collectionName: string, id: string): Observable<any> {
+ /*  getById(collectionName: string, id: string): Observable<any> {
     return this.afs.collection(collectionName).doc(id).valueChanges();
-  }
+  } */
 
   update(collectionName: string, id: string, data: T): Promise<void> {
     return this.afs.collection(collectionName).doc(id).update(data).then(

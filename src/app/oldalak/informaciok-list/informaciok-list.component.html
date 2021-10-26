@@ -3,7 +3,8 @@
       <span>{{title}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
-
+  
+  <section class="background">
   <app-container classes="container-1 flex">
      <ng-container *ngIf= "(list$) | async as list; else loadingOrError"> 
        <app-informacio class="item" *ngFor="let item of list$ | async " [informacio]="item" (getInformacio)="onGetInformacio($event)"></app-informacio>
@@ -27,3 +28,4 @@
   <button mat-fab class="action-btn" (click)="openLeirasok()"  >
     <mat-icon>add</mat-icon>
   </button>
+  </section>

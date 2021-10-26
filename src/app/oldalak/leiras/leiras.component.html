@@ -1,27 +1,50 @@
 <!-- így jelenik meg új lapon  -->
-
-<div class="valami"  *ngFor="let item of inData| async"><!-- ezzel kiválasztom az összes információt -->
-  <mat-card class="det-img" *ngIf = "(item.id == id)"> <!-- ezzel szürőm hogy csak azok az id jelnjenek meg  -->
+<section class="background">
+<div class="example-card"  *ngFor="let item of inData| async"><!-- ezzel kiválasztom az összes információt -->
+  <mat-card class="example-card"  *ngIf = "(item.id == id)"> <!-- ezzel szürőm hogy csak azok az id jelnjenek meg  -->
   
-  <div style="display: flex;">
-    <span style="flex: 1 1;"></span>
-    <button mat-button (click)="close()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
-  <span style="flex: 1 1;"></span>
-  <div class="det-title">
- <h1>{{item.title}}</h1> 
-    <p>{{item.body}}</p> 
-  </div>
-  <button mat-button (click)="delete()">
+   
+
+  
+  <mat-card-title>{{item.title}}</mat-card-title>
+  <mat-card-subtitle>Anonim felhasználó</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{item.body}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+   <button mat-button (click)="opensweetalert()">
     <mat-icon>delete</mat-icon>
   </button>
-  <button mat-button (click)="update()">
+  <button mat-button (click)="opensweetalert2()">
     <mat-icon>update</mat-icon>
   </button>
+  <button mat-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+  </mat-card-actions>
+
+
+    <!-- <mat-card-header>
+      {{item.title}}
+    </mat-card-header>
+    <mat-card-subtitle></mat-card-subtitle>
+ <h1></h1> 
+    <p>{{item.body}}</p> 
+  </div>
+  <div>
+  <button mat-button (click)="opensweetalert()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-button (click)="opensweetalert2()">
+    <mat-icon>update</mat-icon>
+  </button>
+</div> -->
 </mat-card>
 
 </div>
+
+</section>
+
+
 
 

@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -18,7 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   declarations: [RegisztracioComponent],
   imports: [
     CommonModule, MatCardModule, MatButtonModule,FormsModule, ReactiveFormsModule, RegisztracioRoutingModule
-   ,MatInputModule,  MatChipsModule, MatFormFieldModule
+   ,MatInputModule,  MatChipsModule, MatFormFieldModule, MatIconModule
   ],
 
 })

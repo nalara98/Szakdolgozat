@@ -1,4 +1,6 @@
 h1 {text-align: center;
+  margin-top: 50px;
+ 
 }
 h2 {
   text-align: center;
@@ -14,8 +16,8 @@ h2 {
   .main_kategoria mat-card { /* ez felelős a main oldalon a főoldalért, de én ide majd a szöveget szeretném.  */
     background-color:rgb(173, 146, 146);
     flex: 1;
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 50px;
+    min-height: 50px;
     margin: 30px;
     display: flex;
     align-items: center;
@@ -23,4 +25,44 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 20px;
   }
+
+ .background{
+   background-image: url('image3.jpg');
+   background-size: cover;
+   background-position: center center;
+   height: 100%; margin: 0px; padding: 0px; 
+   display: flex;
+ }
+
+.card{
+  font-weight: bold;
+
+  width: 600px;
+  height: 400px;
+  margin-bottom: 100px;
+ 
+  margin: 100px auto;
+
+  justify-content: center;
+  justify-content: center;
+  -ms-word-break: break-all;
+    word-break: break-all;
+
+ /* Non standard for WebKit */
+    word-break: break-word;
+
+-webkit-hyphens: auto;
+-moz-hyphens: auto;
+    hyphens: auto;
+    background-color: white;
+    opacity:0.9; 
+    
+ 
+}
+ 
+
+
+
+  

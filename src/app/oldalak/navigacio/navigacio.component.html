@@ -1,9 +1,13 @@
-
+<!-- 
 <mat-toolbar >
   <mat-toolbar-row>
     <a mat-button [routerLink]="[ '/fooldal/main' ]">
      Időskori demencia
     </a>
+    <button mat-button [matMenuTriggerFor]="menu">
+      Menü
+       <mat-icon>arrow_drop_down</mat-icon>
+     </button>
     <button mat-button *ngFor="let item of kategoriak" [routerLink]="[ item.url ]" routerLinkActive="active">
       {{item.title}}&nbsp;
       <mat-icon>{{item.icon}}</mat-icon>
@@ -19,19 +23,80 @@
         <mat-icon>person</mat-icon>
         <span>Profil</span>
       </button>
-      <!-- <button mat-menu-item disabled>
+       <button mat-menu-item disabled>
         <mat-icon>settings</mat-icon>
         <span>Beállítások</span>
-      </button> -->
+      </button> 
       <button mat-menu-item (click)="kijelentkezes()">
         <mat-icon>arrow_back</mat-icon>
         <span>Kijelentkezés</span>
       </button>
     </mat-menu>
 
-    <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode" > <!-- a szín váltáshoz kell -->
+    <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode" > 
        Szín
     </mat-slide-toggle>
   </mat-toolbar-row>
 
+</mat-toolbar>
+ -->
+
+<!--  <mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>My App</span>
+ <span class="example-spacer"></span>
+ <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <mat-icon>favorite</mat-icon>
+ </button>
+ <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <mat-icon>share</mat-icon>
+</button>
+</mat-toolbar> -->
+<mat-toolbar>
+<mat-toolbar-row>
+ <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+ <a mat-button [routerLink]="[ '/fooldal/main' ]">
+  Időskori demencia
+ </a>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink] ="['/fooldal/main']">
+    <mat-icon>home</mat-icon>
+    <span>Főoldal</span>
+  </button>
+  <button mat-menu-item [routerLink] ="['/fooldal/jatek']">
+    <mat-icon>games</mat-icon>
+    <span>Játék</span>
+  </button>
+  <button mat-menu-item [routerLink] ="['/fooldal/informaciok']">
+    <mat-icon>person</mat-icon>
+    <span>Tanácsok</span>
+  </button>
+</mat-menu> 
+
+<span style="flex: 1 1;"></span>
+<mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode" > 
+  Szín
+</mat-slide-toggle>
+<button mat-button [matMenuTriggerFor]="menu2">
+ 
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #menu2="matMenu">
+  <button mat-menu-item [routerLink] ="['/profil']">
+    <mat-icon>person</mat-icon>
+    <span>Profil</span>
+  </button>
+ 
+  <button mat-menu-item (click)="kijelentkezes()">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Kijelentkezés</span>
+  </button>
+</mat-menu>
+
+
+</mat-toolbar-row>
 </mat-toolbar>

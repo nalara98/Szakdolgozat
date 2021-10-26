@@ -1,14 +1,19 @@
-<mat-toolbar >
+<!-- <mat-toolbar >
     <mat-toolbar-row>
       <span>{{title}}</span>
     </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar> -->
 
-
+<section class="background">
 
  <button mat-fab class="action-btn" (click)="openSegitseg()"  >
     <mat-icon>informacio</mat-icon>
   </button> 
+
+  <button mat-raised-button  (click) = "visibility()">
+    ZENE
+  </button>
+
 
 
 <!DOCTYPE html>
@@ -24,16 +29,22 @@
     </head>
 
     <body>
+
+        
        
-    <div id="music">
+    <div id="music" *ngIf="show" >
+
+        
         
         <ul>
             <li id="list" *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
         </ul>
         <div >
-        <button mat-fab (click) = "play()">Play</button>
-        <button mat-fab (click)="pause()">Pause</button>
-        <button mat-fab (click)="allj()">Stop</button>
+        <button mat-raised-button color = "primary" (click) = "play()">
+        <mat-icon>start</mat-icon>
+        </button>
+        <button mat-raised-button color = "primary" (click)="pause()"><mat-icon>pause</mat-icon></button>
+        <button mat-raised-button color = "primary" (click)="allj()"><mat-icon>stop</mat-icon></button>
         
     </div>
 
@@ -73,15 +84,10 @@
     
                 </div>
     
-                  <div id="theme">
-                  <h3>Válaszon témát!:</h3>
-                    <label><input id="theme-1" type="radio" name="theme" value="light" checked >Világos</label>
-                    <label><input id="theme-2" type="radio" name="theme" value="dark" >Sötét</label>
-    
-                </div>  
+          
             </div>
-            <button id="start-btn" (click)="callfun()">Kezdjen egy új játékot!</button>
-            <button id="stop-btn" (click)="stop()">Stop</button>
+            <button mat-raised-button id="start-btn" (click)="callfun()">Kezdjen egy új játékot!</button>
+            <button mat-raised-button id="stop-btn" (click)="stop()">Stop</button>
         
     
         </header>
@@ -112,12 +118,14 @@
       
       
       
-        <footer>
+        <!-- <footer>
             <p>Copyright</p>
         </footer>
-        <script src="/NagyLauraDorinaSzakdolgozat/src/assets/myjs/sodoku.js"></script> 
+        <script src="/NagyLauraDorinaSzakdolgozat/src/assets/myjs/sodoku.js"></script> --> 
 
         
     </body>
     </html>
+
+</section>
     

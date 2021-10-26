@@ -22,9 +22,11 @@ import { UpdateModule } from './oldalak/update/update.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    
 
  
    

@@ -4,10 +4,11 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-<app-container>
+<section class="background">
+  
+ <mat-card class="card" style="color:black;">
 
-
-    <h1> Kedves Látógató!</h1>
+     <h1> Kedves Látógató!</h1>
 
     <h2>Örülök, hogy az oldalamra találtál.</h2>
     <h2>Remélem hasznos lesz számodra és sok örömödet leled benne</h2>
@@ -16,14 +17,16 @@
 
 
 
-<div class="main_kategoria">
+ <div class="main_kategoria">
     <mat-card *ngFor="let item of kategoriak" matRipple [matRippleColor]="item.color"
        [routerLink] = "[item.url]">
-        <!-- a matrippel adneki egy ilyen kattintási -->
+        <!--  a matrippel adneki egy ilyen kattintási  -->
         {{item.title}}
     </mat-card>
-</div>
+</div>  
+
+</mat-card> 
 
 
     
-</app-container>
+</section>

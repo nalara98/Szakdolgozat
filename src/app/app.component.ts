@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  myimage:string = "assets/kepek/pexels-joaquín-m-9676186.jpg"
   
   
 }

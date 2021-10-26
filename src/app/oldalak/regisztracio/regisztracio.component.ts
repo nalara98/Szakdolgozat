@@ -15,6 +15,8 @@ export class RegisztracioComponent {
     jelszo1: new FormControl('', [Validators.minLength(6), Validators.required]),
     jelszo2: new FormControl('', [Validators.minLength(6), Validators.required]),
   });
+
+  hide = true;
   
   hiba = false;
 
@@ -37,9 +39,7 @@ export class RegisztracioComponent {
  
 
   regisztracio(): void {
-    if (this.form.invalid) {
-      return;
-    }
+    
     this.authServ.regisztracio(this.form.value.email, this.form.value.jelszo1).then(
       result => {
         console.log(result);
