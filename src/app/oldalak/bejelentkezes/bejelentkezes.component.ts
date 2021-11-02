@@ -28,16 +28,22 @@ export class BejelentkezesComponent implements OnInit {
     this.bejelentkezes(); /* ha lenyomjuk az enter bejelentkezik */
   }
 
+  componentName = "bejelentkezes"; /* unit teszt */
+  
   constructor(private rout: Router, private authServ: AuthService) { }
 
   ngOnInit():void{ /* rákényszerítjük a felhasználót hogy újra bejelentkezen. */
-    this.authServ.kijelentkezes();
+    this.kijelentkezet
 
   }
 
   navi(url: string): void{
     this.rout.navigateByUrl(url);
 
+  }
+
+  kijelentkezet(){
+    this.authServ.kijelentkezes
   }
 
 

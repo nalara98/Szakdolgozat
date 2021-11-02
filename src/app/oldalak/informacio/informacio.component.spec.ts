@@ -22,4 +22,10 @@ describe('InformacioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('testing function', () => {
+    expect(component.sum(40,60)).toBe(100);
+  });
+
+
 });

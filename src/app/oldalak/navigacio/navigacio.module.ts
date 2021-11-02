@@ -8,6 +8,7 @@ import {MatMenuModule} from '@angular/material/menu'
 import { RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -16,6 +17,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, RouterModule
   , MatSlideToggleModule, FormsModule
+  ],
+  providers: [
+    AuthService,
+    
   ],
   exports: [NavigacioComponent],
 })

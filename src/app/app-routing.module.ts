@@ -41,7 +41,7 @@ const routes: Routes = [
  
   {
     path: '**',
-    redirectTo: 'fooldal',
+    redirectTo: 'fooldal/main',
     pathMatch: 'full'
   }
 ];

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, InjectionToken, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BejelentkezesComponent } from './bejelentkezes.component';
 import {MatButtonModule} from '@angular/material/button'
@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 
@@ -16,6 +19,11 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,BejelentkezesRoutingModule , MatCardModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule,
     MatInputModule
-  ]
+    ,AngularFireAuthModule,
+  ],
+  providers: [
+    AuthService,
+    
+  ],
 })
 export class BejelentkezesModule { }

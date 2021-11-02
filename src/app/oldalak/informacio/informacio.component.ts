@@ -19,6 +19,10 @@ export class InformacioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  sum(a:any,b:any)
+  {
+    return a + b ;
+  }
   
 
 }

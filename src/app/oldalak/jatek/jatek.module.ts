@@ -5,9 +5,11 @@ import { JatekRoutingMOdule } from './jatek-routing.module';
 import { NavigacioModule } from '../navigacio/navigacio.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -20,7 +22,8 @@ import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
 
     MatDialogModule, MatRadioModule
   ],
-  exports: [JatekComponent]
+  exports: [JatekComponent],
+  providers:[MatDialog]
 })
 export class JatekModule { }
 

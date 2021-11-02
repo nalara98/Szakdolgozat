@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { LeirasokAddComponent } from './leirasok-add.component';
 
@@ -8,7 +9,13 @@ describe('LeirasokAddComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LeirasokAddComponent ]
+      imports: [MatDialogModule],
+      declarations: [ LeirasokAddComponent ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },]
     })
     .compileComponents();
   });

@@ -35,16 +35,13 @@ export class LeirasComponent implements OnInit {
     if (params?.id) {
       this.id = params.id;
       this.dataNameStr = params.dataNameStr;
-      /*  this.getItem();  */
+      
      this.get();   
     }
     console.log(this.id, this.dataNameStr);
   }
 
- /*    getItem(): void {
-    this.inData = this.service.getById(this.dataNameStr + 's' , this.id)
-  }  
- */
+
   close(): void {
     this.location.back();
   }

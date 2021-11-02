@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { getPersonForm } from 'src/app/shared/form/person.form';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
+
 import { getAddressForm } from 'src/app/shared/form/address.form';
-import { getAuth } from "firebase/auth";
-import { updatePassword } from "firebase/auth";
+
+
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+
+import { getAuth } from "firebase/auth";
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
+AngularFireModule.initializeApp(environment.firebaseConfig);
+
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -27,16 +34,12 @@ export class ProfilComponent implements OnInit {
 
   }
   
-
  auth = getAuth(); /* ez kell ahhoz hogy az aktuális email jelenjen meg:D  */
  user = this.auth.currentUser;
  
 
- 
 
- 
-
- if (user:any){
+  if (user:any){
   // The user object has basic properties such as display name, email, etc.
   const displayName = user.displayName;
   const email = user.email;

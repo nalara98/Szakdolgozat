@@ -20,12 +20,13 @@ export class InformaciokListComponent implements OnInit {
   errorObject = null;
   id = '';
   
-
+componantName = "informacioklist"
   constructor(private service: BaseService<Informacio>, private dialog: MatDialog, private router: Router) { }
 
-  ngOnInit(): void {
-        this.get();
-  }
+  ngOnInit() {
+        this.get()
+  } 
+ 
   get(): void {
     this.errorObject = null;
     this.list$ = this.service.get('informaciok').pipe(
@@ -33,7 +34,7 @@ export class InformaciokListComponent implements OnInit {
         this.errorObject = err;
         return throwError(err);
       })
-    );
+    ); 
   }
 
 

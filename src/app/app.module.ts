@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateModule } from './oldalak/update/update.module';
+import { Overlay, OverlayModule } from '@angular/cdk/overlay';
+
 
 
 
@@ -26,11 +28,6 @@ import { UpdateModule } from './oldalak/update/update.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
-
- 
-   
-   
    
     
   ],
@@ -44,7 +41,9 @@ import { UpdateModule } from './oldalak/update/update.module';
     AngularFireAuthModule,
     RouterModule,
     MatNativeDateModule,
-    UpdateModule
+    UpdateModule, 
+    OverlayModule
+   
 
   ],
   providers: [],

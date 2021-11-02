@@ -1,22 +1,24 @@
 import { style } from '@angular/animations';
+import { Time } from '@angular/common';
 import { identifierModuleUrl } from '@angular/compiler';
 import { applySourceSpanToExpressionIfNeeded, variable } from '@angular/compiler/src/output/output_ast';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 import * as moment from 'moment';
 
 
 
 import { Observable, timer } from 'rxjs';
 import { SegitsegComponent } from '../segitseg/segitseg.component';
-
+declare const stopTimer:any; 
 
  declare const startGame:any;
 
-declare const stopTimer:any; 
-declare const generateBoard:any;
+
+
 
 
 
@@ -154,10 +156,19 @@ openFile(url:any){ /* betöltöm a zenét */
   
 
 }
-  ngOnDestroy(){ /* ennek a segítségével ha elhagyom az oldalt leállnak ezek a dolgok */
+ngOnInit(){
+  this.allj();
+  this.stop();
+  
+  
+
+}
+  ngOnDestroy(){ 
     this.allj();
     this.stop();
-  }
+    
+    
+  } 
 
   play(){ /* elindítás */
     this.audioObj.play();

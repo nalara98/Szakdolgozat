@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { UpdateComponent } from './update.component';
 
@@ -8,7 +9,14 @@ describe('UpdateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateComponent ]
+      
+      declarations: [ UpdateComponent ],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },]
+      
     })
     .compileComponents();
   });

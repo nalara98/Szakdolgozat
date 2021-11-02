@@ -46,13 +46,12 @@ const easy = [
 
         });
     }
-      //choose board difficulty
+     
       let board;
       if (id("diff-1").checked) board = easy[0];
         else if (id("diff-2").checked) board = medium[0];
         else board = hard[0];
 
-        //set lives to 3 and enable selecting numbers
         lives = 10;
         diableSelect = false;
         id("lives").textContent = "Életek száma: 10";
@@ -60,8 +59,6 @@ const easy = [
         score = 0;
         id("score").textContent = "Pontszám: 0";
 
-
-        //creates board based on dificultry
 
         generateBoard(board);
       
@@ -77,23 +74,17 @@ const easy = [
 
     }
     function startTimer(){
-        //Sets time remaining 
         if (id("time-1").checked) timeRemaining = 5;
         else if(id("time-2").checked) timeRemaining = 300;
         else timeRemaining = 600;
-        //Sets timer for first secong
         id ("timer").textContent = timeConversion(timeRemaining);
-        //Sets timer to update every second
-        timer = setInterval(function(){
+       timer = setInterval(function(){
             timeRemaining --;
-            //if no time remaining eng the game
             if(timeRemaining ===0) endGame();
-            
-           id("timer").textContent = timeConversion(timeRemaining);
+        id("timer").textContent = timeConversion(timeRemaining);
 
         }, 1000)
        
-
     }
 
 
@@ -224,10 +215,10 @@ else{
     } 
 
     function endGame(){
-        //Disable moves and stop the timer
+        
         diableSelect = true;
         clearTimeout(timer);
-        //Disaplay won or loss message
+     
         if(lives ===0 || timeRemaining ===0){
             id("lives").textContent = "Vesztettél"
         }else{
@@ -235,7 +226,6 @@ else{
         }
 
         var person = prompt("Adja meg a nevét:", "valaki");
-		// eltároljuk localStorage-ben az aktuális játékos pontszámát
 		localStorage.setItem(person, Number(score)); 
 
         fill_toplist(); 
@@ -275,27 +265,23 @@ else{
     }
 
     function fill_toplist() {
-        // végigmegyünk a localStorage mentett elemein és egy új tömbbe pakoljuk. asszociatív tömb
-        var data = [];
+      var data = [];
         for (var i = 0; i < localStorage.length; i++) {
             data[i] = [localStorage.key(i), parseInt(localStorage.getItem(localStorage.key(i)))];
-        }
-        // csökkenő sorrendbe rendezzük az elemeket az elért pontszám alapján
+        }        
         data.sort(function (a, b) {
             return b[1] - a[1];
         });
-        // a 10 legtobb pontot elert jatekost jelezzuk ki a listan
         for (let act_data of data.keys()) {
             if (act_data < 10) {
                 $('#top_list').append(data[act_data][0] + ' : ' + data[act_data][1] + '<br><hr>');
                 
             }
-
             setTimeout(function(){ history.go(0); },3000); 
-
-        
         } 
-   
+         // végigmegyünk a localStorage mentett elemein és egy új tömbbe pakoljuk. asszociatív tömb
+   // csökkenő sorrendbe rendezzük az elemeket az elért pontszám alapján
+          // a 10 legtobb pontot elert jatekost jelezzuk ki a listan
      
        
     }
