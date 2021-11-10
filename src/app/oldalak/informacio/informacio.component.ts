@@ -9,16 +9,15 @@ import { Informacio } from 'src/app/shared/models/informacio.model';
 export class InformacioComponent implements OnInit {
 
   @Input() informacio: Informacio = {} as any;
-  @Input() hasAction = true;
-  @Output() callFav = new EventEmitter<Informacio>();
-  @Output() getInformacio = new EventEmitter<Informacio>();
+
+  @Output() getInformacio = new EventEmitter<Informacio>(); 
   
 
 
   constructor() { }
 
   ngOnInit(): void {
-  }
+  } /* unit teszt */
   sum(a:any,b:any)
   {
     return a + b ;

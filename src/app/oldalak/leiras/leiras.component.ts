@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { BaseService } from 'src/app/services/base.service';
+import { BaseService } from 'src/app/services/tanacsok.service';
 import { Location } from '@angular/common';
 import { Informacio } from 'src/app/shared/models/informacio.model';
 import { catchError } from 'rxjs/operators';
@@ -22,7 +22,7 @@ import Swal from 'sweetalert2'
 export class LeirasComponent implements OnInit {
   
   id = '';
-  dataNameStr = '';
+  dataName = '';
   inData: Observable<Informacio[]> | null = null;
   errorObject: any;
   informacio = INFORMACIOK;
@@ -34,16 +34,16 @@ export class LeirasComponent implements OnInit {
     const params = this.route.snapshot.params;
     if (params?.id) {
       this.id = params.id;
-      this.dataNameStr = params.dataNameStr;
+      this.dataName = params.dataName;
       
      this.get();   
     }
-    console.log(this.id, this.dataNameStr);
+    console.log(this.id, this.dataName);
   }
 
 
   close(): void {
-    this.location.back();
+    this.location.back(); 
   }
  get(){
   this.inData = this.service.get('informaciok').pipe(
@@ -61,7 +61,7 @@ delete(){
  update(){
  
   const dialogReferenc = this.dialog.open(UpdateComponent, {});
-  // tslint:disable-next-line: deprecation
+ 
   dialogReferenc.afterClosed().subscribe((informacio: Informacio) => {
     console.log(informacio);
     if (informacio?.title) {

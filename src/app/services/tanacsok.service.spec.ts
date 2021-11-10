@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { BehaviorSubject } from 'rxjs';
 
-import { BaseService } from './base.service';
+import { BaseService } from './tanacsok.service';
 
 describe('BaseService', () => {
   let service: BaseService<any>;

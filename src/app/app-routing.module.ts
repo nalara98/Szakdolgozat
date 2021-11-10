@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LeirasModule } from './oldalak/leiras/leiras.module';
-import { AuthGuard } from './shared/guard/auth-guard';
+import { RouteGuard } from './shared/routeguards/route-guard';
 const routes: Routes = [
   { path: '', redirectTo: 'fooldal/main', pathMatch: 'full' },
   {
@@ -26,13 +26,13 @@ const routes: Routes = [
 {
   path: 'leiras',
   loadChildren: () => import('./oldalak/leiras/leiras.module').then(m => m.LeirasModule),
-  canActivate: [AuthGuard]
+  canActivate: [RouteGuard]
 } ,
 
 {
   path: 'profil',
   loadChildren: () => import('./oldalak/profil/profil.module').then(m => m.ProfilModule),
-  canActivate: [AuthGuard]
+  canActivate: [RouteGuard]
 } ,
 
 

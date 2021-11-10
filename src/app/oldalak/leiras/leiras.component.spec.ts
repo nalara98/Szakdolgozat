@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
-import { BaseService } from 'src/app/services/base.service';
+import { BaseService } from 'src/app/services/tanacsok.service';
 
 import { LeirasComponent } from './leiras.component';
 

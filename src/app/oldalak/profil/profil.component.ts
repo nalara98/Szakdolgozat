@@ -5,14 +5,14 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { getAddressForm } from 'src/app/shared/form/address.form';
 
 
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
 
 import { getAuth } from "firebase/auth";
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 
-AngularFireModule.initializeApp(environment.firebaseConfig);
+AngularFireModule.initializeApp(environment.firebaseConfig)
 
 @Component({
   selector: 'app-profil',
@@ -21,65 +21,41 @@ AngularFireModule.initializeApp(environment.firebaseConfig);
 })
 export class ProfilComponent implements OnInit {
  hide = true; /* jelszó megjelenítés */
-  form: FormGroup | null = null;
+  
   form1: FormGroup = new FormGroup({
     /* Ha több validátort akarunk használni akkor tömben kell megadni, neten utána néézni az email regekszeknek */
     jelszo1: new FormControl('', [Validators.minLength(6), Validators.required]),
   
   });
-  constructor(private authServ: AuthService,private rout: Router) { }
+  constructor(private authServ: AuthenticationService,private rout: Router) { }
 
   navi(url: string): void{
     this.rout.navigateByUrl(url);
 
   }
   
- auth = getAuth(); /* ez kell ahhoz hogy az aktuális email jelenjen meg:D  */
+ auth = getAuth();
  user = this.auth.currentUser;
  
-
-
   if (user:any){
-  // The user object has basic properties such as display name, email, etc.
-  const displayName = user.displayName;
-  const email = user.email;
+  
+   const email = user.email;
   const password = user.password
+  
  };
 
-
   ngOnInit(): void {
-    this.intForm();
+    this.currentEmail();
   }
 
-  intForm(): void{
-    this.form = getPersonForm();
-    const idFormArray = this.form.get('identifier') as FormArray ;
-    (idFormArray.get([1]) as FormGroup).controls.value.setValue(this.user?.email);
-  }/* emailhez kell  */
+  currentEmail(): void{
+  this.user?.email
+  }
 
-log():void{
-  console.log(this.form?.value);
-}/* ennek a nevét majd átírni */
 
-addAddress(){
-  const FormArray = this.form?.get('address') as FormArray ;
-  FormArray.push(getAddressForm());
-  /* ha rákantintok a plusz gombra mindig add egy pluszt */
-    
-}
-
-get getAddres(): FormArray{
-  return this.form?.get('address') as FormArray; 
-}
-
-removeAddress(index: number): void{
-  const FormArray = this.form?.get('address') as FormArray;
-    FormArray.removeAt(index);
-}
 
 updatPassword(){
-  this.navi('/bejelentkezes');
-  
+   
   if (this.form1.invalid) {
     return;
   }

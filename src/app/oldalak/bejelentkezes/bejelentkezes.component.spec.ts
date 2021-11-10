@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject, of } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 import { BejelentkezesComponent } from './bejelentkezes.component';
 
@@ -21,7 +21,7 @@ describe('BejelentkezesComponent', () => {
     }),
   };
 
-  let service: AuthService;
+  let service: AuthenticationService;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports:[
@@ -31,13 +31,13 @@ describe('BejelentkezesComponent', () => {
         
       ],
       providers: [
-        { provide: AuthService, useValue: FirestoreStub },
+        { provide: AuthenticationService, useValue: FirestoreStub },
       ],
    
       declarations: [ BejelentkezesComponent ]
     })
     .compileComponents();
-    service = TestBed.inject(AuthService)
+    service = TestBed.inject(AuthenticationService)
   });
 
   beforeEach(() => {

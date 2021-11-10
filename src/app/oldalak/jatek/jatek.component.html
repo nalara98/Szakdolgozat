@@ -68,19 +68,19 @@
             <h1 id="sodoku">Sudoku</h1>
             <div id="setup-game">
     
-                <div id="diff">
+                <div id="nehezseg">
                     <h3>Válaszon nehézséget!:</h3>
-                    <label><input id="diff-1" type="radio" name="diff" value="easy" checked >Könnyű</label>
-                    <label><input id="diff-2" type="radio" name="diff" value="medium" >Nehéz</label>
-                    <label><input id="diff-3" type="radio" name="diff" value="hard" >Profi</label>
+                    <label><input id="nehezseg-1" type="radio" name="nehezseg" value="konnyu" checked >Könnyű</label>
+                    <label><input id="nehezseg-2" type="radio" name="nehezseg" value="kozepes" >Nehéz</label>
+                    <label><input id="nehezseg-3" type="radio" name="nehezseg" value="nehez" >Profi</label>
                      
                 </div>
     
-                <div id="time">
+                <div id="ido">
                     <h3>Idő</h3>
-                    <label><input id="time-1" type="radio" name="time" value="three" checked >3 perc</label>
-                    <label><input id="time-2" type="radio" name="time" value="five" >5 perc</label>
-                    <label><input id="time-3" type="radio" name="time" value="ten" >10 perc</label>
+                    <label><input id="ido-1" type="radio" name="ido" value="harom" checked >3 perc</label>
+                    <label><input id="ido-2" type="radio" name="ido" value="ot" >5 perc</label>
+                    <label><input id="ido-3" type="radio" name="ido" value="tiz" >10 perc</label>
     
                 </div>
     
@@ -92,38 +92,30 @@
     
         </header>
         <div id="stats">
-            <p id="timer"></p>
-            <p id="lives"></p>
-            <p id="score"></p>
+            <p id="idozito"></p>
+            <p id="eletek"></p>
+            <p id="pontszam"></p>
         </div> 
         <div id="game">
-            <div id="board"></div>
+            <div id="tabla"></div>
            
-            <div id="number-container" class="hidden">
-                <p id="one">1</p>
-                <p id="two">2</p>
-                <p id="three">3</p>
-                <p id="four">4</p>
-                <p id="five">5</p>
-                <p id="six">6</p>
-                <p id="seven">7</p>
-                <p id="eight">8</p>
-                <p id="nine">9</p>
+            <div id="lehetsegesszamok" class="hidden">
+                <p id="egy">1</p>
+                <p id="ketto">2</p>
+                <p id="harom">3</p>
+                <p id="negy">4</p>
+                <p id="ot">5</p>
+                <p id="hat">6</p>
+                <p id="het">7</p>
+                <p id="nyolc">8</p>
+                <p id="kilenc">9</p>
                 
             </div>
             <div class="ujtoplista" id="newlist"> Top Lista: </div>
-            <div class="toplista" id="top_list">  </div>
+            <div class="toplista" id="top_lista">  </div>
           
         </div>
-      
-      
-      
-        <!-- <footer>
-            <p>Copyright</p>
-        </footer>
-        <script src="/NagyLauraDorinaSzakdolgozat/src/assets/myjs/sodoku.js"></script> --> 
-
-        
+           
     </body>
     </html>
 

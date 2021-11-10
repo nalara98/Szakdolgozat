@@ -10,7 +10,7 @@ export class BaseService <T extends { id?: string }> {
   collection(arg0: string, arg1: (ref: any) => any) {
     throw new Error('Method not implemented.');
   }
-  getelementbyid(dataNameStr: string, id: string): Observable<any> | null {
+  getelementbyid(dataName: string, id: string): Observable<any> | null {
     throw new Error('Method not implemented.');
   }
   

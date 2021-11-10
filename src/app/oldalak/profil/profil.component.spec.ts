@@ -6,7 +6,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject, of } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { environment } from 'src/environments/environment';
 import { getAuth } from "firebase/auth";
 
@@ -34,11 +34,12 @@ describe('ProfilComponent', () => {
 
       imports: [
         RouterTestingModule,
+        
       ],
    
       declarations: [ ProfilComponent ],
       providers: [
-        { provide: AuthService, getAuth, useValue: FirestoreStub },
+        { provide: AuthenticationService, useValue: FirestoreStub },
       ],
      
 
@@ -52,8 +53,9 @@ describe('ProfilComponent', () => {
     fixture.detectChanges();
   });
 
-/*   it('should create', () => {
+   it('should create', () => {
     expect(component).toBeTruthy();
-  }); */ 
+  }); 
+
 });
 

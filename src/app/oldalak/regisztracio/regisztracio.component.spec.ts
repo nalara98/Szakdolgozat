@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 import { RegisztracioComponent } from './regisztracio.component';
 
@@ -24,7 +24,7 @@ describe('RegisztracioComponent', () => {
       ],
       declarations: [ RegisztracioComponent ],
       providers: [
-        { provide: AuthService, useValue: FirestoreStub },
+        { provide: AuthenticationService, useValue: FirestoreStub },
       ],
     })
     .compileComponents();

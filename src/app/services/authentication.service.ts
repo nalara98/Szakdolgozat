@@ -4,36 +4,36 @@ import { AngularFireAuth} from "@angular/fire/compat/auth";
 @Injectable({
     providedIn:'root'
 })
-export class AuthService{
+export class AuthenticationService{
   getInstance() {
     throw new Error('Method not implemented.');
   }
-    constructor(private angfAuth: AngularFireAuth){
+    constructor(private angfireAuth: AngularFireAuth){
 
     }
     async kijelentkezes(): Promise<void> {
-      await this.angfAuth.signOut();
+      await this.angfireAuth.signOut();
   }
 
   bejelentkezes(email: string, jelszo: string): Promise<any> {
-      return this.angfAuth.signInWithEmailAndPassword(email, jelszo);
+      return this.angfireAuth.signInWithEmailAndPassword(email, jelszo);
   }
 
   regisztracio( email: string, jelszo: string): Promise<any> {
-    return this.angfAuth.createUserWithEmailAndPassword(email,jelszo);
+    return this.angfireAuth.createUserWithEmailAndPassword(email,jelszo);
 }
 
   authenticated(): boolean {
-      return this.angfAuth.authState !== null;
+      return this.angfireAuth.authState !== null;
   }
 
   currentUserObservable(): any {
-      return this.angfAuth.authState;
+      return this.angfireAuth.authState;
   }
   
    
     newPassword(newPassword: string) {
-    return this.angfAuth.currentUser.then((user:any) => {
+    return this.angfireAuth.currentUser.then((user:any) => {
       return user.updatePassword(newPassword);
     });
   }  /* ha egy bizonyos időn túl vagy bejelentkezve akkor újra be kell jelentkezni */

@@ -1,4 +1,4 @@
-import { FormControl, FormGroup } from '@angular/forms';
+ import { FormControl, FormGroup } from '@angular/forms';
 
 export function getIdentifierForm(typeText: string, ): FormGroup {
     return new FormGroup({
@@ -8,4 +8,4 @@ export function getIdentifierForm(typeText: string, ): FormGroup {
         }),
         value: new FormControl()
     });
-}
+} 

@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 
@@ -22,7 +22,7 @@ import { AuthService } from 'src/app/services/auth.service';
     ,AngularFireAuthModule,
   ],
   providers: [
-    AuthService,
+    AuthenticationService,
     
   ],
 })

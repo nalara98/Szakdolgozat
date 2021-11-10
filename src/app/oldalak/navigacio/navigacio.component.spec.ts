@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 import { NavigacioComponent } from './navigacio.component';
 
@@ -27,7 +27,7 @@ describe('NavigacioComponent', () => {
       ],
       declarations: [ NavigacioComponent ],
       providers: [
-        { provide: AuthService, useValue: FirestoreStub },
+        { provide: AuthenticationService, useValue: FirestoreStub },
       ],
     })
     .compileComponents();

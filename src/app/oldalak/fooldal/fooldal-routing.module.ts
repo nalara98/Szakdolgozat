@@ -1,7 +1,7 @@
 import { FooldalComponent } from './fooldal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/shared/guard/auth-guard';
+import { RouteGuard } from 'src/app/shared/routeguards/route-guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'splash', pathMatch: 'full' },
@@ -25,7 +25,7 @@ const routes: Routes = [
          
              
         ],
-        canActivateChild: [AuthGuard] /* az összeset levédi */
+        canActivate: [RouteGuard] /* az összeset levédi */
     },
 ];
 

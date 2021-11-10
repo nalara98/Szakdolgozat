@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError,  debounceTime, map, startWith } from 'rxjs/operators';
-import { BaseService } from 'src/app/services/base.service';
+import { BaseService } from 'src/app/services/tanacsok.service';
 import { Informacio } from 'src/app/shared/models/informacio.model';
 import { LeirasokAddComponent } from '../leirasok-add/leirasok-add.component';
 
@@ -15,9 +15,9 @@ import { LeirasokAddComponent } from '../leirasok-add/leirasok-add.component';
 })
 export class InformaciokListComponent implements OnInit {
   title='Informacio';
-  list$: Observable<Informacio[]> | null = null; /*$ jelölés jelentése nem egy sima lista hanem egy observable  */
+  lista$: Observable<Informacio[]> | null = null; /*$ jelölés jelentése nem egy sima lista hanem egy observable  */
 
-  errorObject = null;
+  error = null;
   id = '';
   
 componantName = "informacioklist"
@@ -28,10 +28,10 @@ componantName = "informacioklist"
   } 
  
   get(): void {
-    this.errorObject = null;
-    this.list$ = this.service.get('informaciok').pipe(
+    this.error = null;
+    this.lista$ = this.service.get('informaciok').pipe(
       catchError(err => {
-        this.errorObject = err;
+        this.error = err;
         return throwError(err);
       })
     ); 

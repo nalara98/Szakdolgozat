@@ -8,51 +8,34 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import * as moment from 'moment';
-
-
-
 import { Observable, timer } from 'rxjs';
 import { SegitsegComponent } from '../segitseg/segitseg.component';
-declare const stopTimer:any; 
 
- declare const startGame:any;
-
-
-
-
-
-
+declare const stopIdozito:any; 
+declare const startSudoku:any;
 
 @Component({
   
   selector: 'app-jatek',
   templateUrl: './jatek.component.html',
-  styleUrls: ['./jatek.component.scss'],
-
- 
-
-
-  
+  styleUrls: ['./jatek.component.scss'],  
 
 })
 
 
-
 export class JatekComponent  {
   title='Játék';
-  show:boolean=false;
+  show:boolean=false; /* látszik-e a zene */
 
 
   callfun(){
   /* ezzel hívom meg a sodoku játékot */
-     startGame(); 
-   
-  
-   
+    startSudoku(); 
+    
   }
  
   stop(){ /* ezzel lehet az időt megállítani */
-     stopTimer(); 
+     stopIdozito(); 
   }
 
   visibility(){
@@ -105,14 +88,12 @@ streamObserver(url:any){
        this.seek = this.audioObj.currentTime;
        this.duration = this.timeFormat (this.audioObj.duration);
        this.currentTime = this.timeFormat(this.audioObj.currentTime);
-      
 
     }
     this.addEvent(this.audioObj, this.audioEvents, handler)
     return() => {
       this.audioObj.pause();
       this.audioObj.currentTime = 0;
-
       this.removeEvent(this.audioObj, this.audioEvents, handler);
 
     }
@@ -120,7 +101,6 @@ streamObserver(url:any){
   });
 
 }
-
 addEvent(obj:any, events:any, handler:any){
   events.forEach((event: any) => {
     obj.addEventListener(event, handler)
@@ -128,7 +108,6 @@ addEvent(obj:any, events:any, handler:any){
   });
 
 }
-
 removeEvent(obj:any, events:any, handler:any){
 
   events.forEach((event: any) => {
@@ -153,8 +132,7 @@ openFile(url:any){ /* betöltöm a zenét */
  });
 
   console.log(url)
-  
-
+ 
 }
 ngOnInit(){
   this.allj();

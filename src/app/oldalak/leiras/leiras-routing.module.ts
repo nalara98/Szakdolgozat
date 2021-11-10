@@ -4,7 +4,7 @@ import { LeirasComponent } from './leiras.component';
 
 const routes: Routes = [
     {
-        path: ':dataNameStr/:id',
+        path: ':dataName/:id',
         component: LeirasComponent,
        
     }

@@ -5,34 +5,3 @@
 
 
 
-<!-- <span [ngSwitch]="oldal">
-    <span *ngSwitchCase="'fooldal'">
-        <app-navigacio [kivalasztottKategoria]="kategoria" [kategoriak]="kategoriak"
-            (kivalasztottKat)="onSelect($event)" (kivalasztottOldal)="oldal = $event"></app-navigacio>
-        <span [ngSwitch]="kategoria">
-            <span *ngSwitchCase="'informacio'" class="kontener">
-                <app-informacio *ngFor="let item of informaciok | async" [informacio]="item" ></app-informacio>
-                <button mat-fab class="action-btn" (click)="openLeirasok()">
-                  <mat-icon>add</mat-icon>
-                </button>
-            </span>
-
-            <span *ngSwitchCase="'jatek'" class="kontener">
-                <app-jatek></app-jatek>
-
-            </span>
-            <span *ngSwitchDefault class="kontener">
-                <app-main [kategoriak]="kategoriak" (kivalasztottKat)="onSelect($event)"></app-main>
-            </span>
-        </span>
-    </span>
-    <span *ngSwitchCase="'regisztracio'">
-        <app-regisztracio (kivalasztottOldal)="oldal = $event"></app-regisztracio>
-    </span>
-
-
-
-    <span *ngSwitchDefault>
-        <app-bejelentkezes (kivalasztottOldal)="oldal = $event"></app-bejelentkezes>
-    </span>
-</span> -->

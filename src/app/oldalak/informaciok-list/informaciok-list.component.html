@@ -8,18 +8,18 @@
   
   <section class="background">
   <app-container classes="container-1 flex">
-     <ng-container *ngIf= "(list$) | async as list; else loadingOrError"> 
-       <app-informacio class="item" *ngFor="let item of list$ | async " [informacio]="item" (getInformacio)="onGetInformacio($event)"></app-informacio>
+     <ng-container *ngIf= "(lista$) | async as lista; else loadingOrError"> 
+       <app-informacio class="elem" *ngFor="let elem of lista$ | async " [informacio]="elem" (getInformacio)="onGetInformacio($event)"></app-informacio>
       <br> 
     </ng-container>  
     <ng-template #loadingOrError>
-      <ng-container *ngIf="errorObject; else loading">
-        <span class="centering">
+      <ng-container *ngIf="error; else loading">
+        <span class="toltes">
           Valami hiba történt!
         </span>
       </ng-container>
       <ng-template #loading>
-        <span class="centering">
+        <span class="toltes">
           <mat-spinner></mat-spinner>
         </span>
       </ng-template>

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -29,8 +29,7 @@ export class BejelentkezesComponent implements OnInit {
   }
 
   componentName = "bejelentkezes"; /* unit teszt */
-  
-  constructor(private rout: Router, private authServ: AuthService) { }
+  constructor(private rout: Router, private authServ: AuthenticationService) { }
 
   ngOnInit():void{ /* rákényszerítjük a felhasználót hogy újra bejelentkezen. */
     this.kijelentkezet
@@ -53,8 +52,7 @@ export class BejelentkezesComponent implements OnInit {
     }
     this.authServ.bejelentkezes(this.form.value.email, this.form.value.jelszo).then(
       result => {
-        console.log(result);
-        this.navi('/fooldal/main');
+      this.navi('/fooldal/main');
       },
       (error) => {
         this.hibaUzenet = (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password')

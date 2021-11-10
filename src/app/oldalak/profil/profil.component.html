@@ -8,7 +8,7 @@
     </mat-toolbar-row>
   </mat-toolbar>
   
-  <app-container *ngIf="form" [formGroup]="form">
+  <app-container >
   
     <mat-card class="margin-bottom">
       <mat-card-header>
@@ -19,7 +19,7 @@
           <mat-list-item>
             <mat-icon mat-list-icon>lock</mat-icon>
             <div mat-line> E-mail </div>
-            <div mat-line> {{form.value.identifier[1].value}} </div>
+            <div mat-line> {{this.user?.email}} </div>
           </mat-list-item>
           <form [formGroup]="form1" (ngSubmit)="updatPassword()">
             <mat-form-field >

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-regisztracio',
@@ -30,7 +30,7 @@ export class RegisztracioComponent {
  
  
 
-  constructor(private rout: Router, private authServ: AuthService) { }
+  constructor(private rout: Router, private authServ: AuthenticationService) { }
   
   navi(url: string): void{
     this.rout.navigateByUrl(url);
