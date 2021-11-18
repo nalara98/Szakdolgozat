@@ -43,8 +43,7 @@ const konnyu = [
                     frissites();
                 }
             }
-            //If selecting is not disabled
-             //deselect all other numbers
+            
 
         });
     }
@@ -68,9 +67,9 @@ const konnyu = [
         id("top_lista").classList.remove("toplista");
         id("newlist").classList.remove("ujtoplista");
 
-        //Starts the timer
+      
         startIdozito();
-        //Sets theme based on input
+       
       
  
 
@@ -206,8 +205,7 @@ const konnyu = [
 
 
     function checkCorrect(lap){
-       //Set solution based on difficulty selectio
-       let solution;
+        let solution;
        if (id("nehezseg-1").checked) solution = konnyu[1];
        else if (id("nehezseg-2").checked) solution = kozepes[1];
        else solution = nehez[1];
@@ -247,10 +245,7 @@ const konnyu = [
             }
             setTimeout(function(){ history.go(0); },3000); 
         } 
-         // végigmegyünk a localStorage mentett elemein és egy új tömbbe pakoljuk. asszociatív tömb
-   // csökkenő sorrendbe rendezzük az elemeket az elért pontszám alapján
-          // a 10 legtobb pontot elert jatekost jelezzuk ki a listan
-     
+        
        
     }
   
