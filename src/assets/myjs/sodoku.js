@@ -18,7 +18,7 @@ const konnyu = [
   var eletek;
   var kivalsztottSzam;
   var kivalsztottLap;
-  var tiltSelect;
+  var kivalaszttilt;
   var pontszam;
 
   
@@ -27,22 +27,24 @@ const konnyu = [
   
     for (let i = 0; i < id("lehetsegesszamok").children.length; i++){
         id("lehetsegesszamok").children[i].addEventListener("click", function(){
-            //If selecting is not disabled
-            if (!tiltSelect ) {
-                if(this.classList.contains("selected")){
-                    this.classList.remove("selected");
+         
+            if (!kivalaszttilt ) {
+                if(this.classList.contains("kivalasztott")){
+                    this.classList.remove("kivalasztott");
                    kivalsztottSzam= null;
 
                 }else{
-                    //deselect all other numbers
+                   
                     for(let i = 0; i < 9 ; i++){
-                        id("lehetsegesszamok").children[i].classList.remove("selected");
+                        id("lehetsegesszamok").children[i].classList.remove("kivalasztott");
                     }
-                    this.classList.add("selected");
+                    this.classList.add("kivalasztott");
                     kivalsztottSzam = this;
-                    updateMove();
+                    frissites();
                 }
             }
+            //If selecting is not disabled
+             //deselect all other numbers
 
         });
     }
@@ -53,7 +55,7 @@ const konnyu = [
         else tabla = nehez[0];
 
         eletek = 10;
-        tiltSelect = false;
+        kivalaszttilt = false;
         id("eletek").textContent = "Életek száma: 10";
 
         pontszam = 0;
@@ -74,17 +76,18 @@ const konnyu = [
 
     }
     function startIdozito(){
-        if (id("ido-1").checked) idoBeallitas = 5;
+        if (id("ido-1").checked) idoBeallitas = 180;
         else if(id("ido-2").checked) idoBeallitas = 300;
         else idoBeallitas = 600;
-        id ("idozito").textContent = timeConversion(idoBeallitas);
+        id ("idozito").textContent = idoKonvertalas(idoBeallitas);
         idozito = setInterval(function(){
             idoBeallitas --;
             if(idoBeallitas ===0) endGame();
-        id("idozito").textContent = timeConversion(idoBeallitas);
+        id("idozito").textContent = idoKonvertalas(idoBeallitas);
 
         }, 1000)
        
+        
     }
 
 
@@ -93,7 +96,7 @@ const konnyu = [
         clearTimeout(idozito);
     }
 
-    function timeConversion(ido){
+    function idoKonvertalas(ido){
         let minutes = Math.floor(ido/60);
         if(minutes < 10) minutes = "0" + minutes;
         let seconds = ido % 60;
@@ -101,107 +104,76 @@ const konnyu = [
         return minutes + ":" + seconds;
     }
     function tablaLetrehozas(tabla){
-        //Clear previous board
-        clearPrevious();
-
-        //let used to incement tile ids
-        let idCount = 0;
         
-        //creat 81 tiles
+        osszesTablaTorles();
+        let idCount = 0;
         for(let i = 0; i < 81; i++) {
-            //creat a new paragraph element
-            let lap = document.createElement("a");
-           /*  console.log("p") */
-            // if the tile is not supposed to be blank
-             if (tabla.charAt(i) != "-") {
-            //set tile text to correct number
+           let lap = document.createElement("a");
+           if (tabla.charAt(i) != "-") {
             lap.textContent = tabla.charAt(i);
             }   else {
-                //Add click event listener to tile
-               lap.addEventListener("click", function() {
-                //If selecting not disabled 
-                if(!tiltSelect){
-                    //If the tile is already  selected
-                    if(lap.classList.contains("selected")){
-                        //then remove selection
-                        lap.classList.remove("selected");
+                 lap.addEventListener("click", function() {
+                    if(!kivalaszttilt){
+                    if(lap.classList.contains("kivalasztott")){
+                       lap.classList.remove("kivalasztott");
                         kivalsztottLap = null;
                     }else{
-                        //deselect all othet tiles 
-                        for(let i = 0; i < 81; i++){
-                            qsa(".lap")[i].classList.remove("selected");
+                       for(let i = 0; i < 81; i++){
+                       qsa(".lap")[i].classList.remove("kivalasztott");
                         }
-                    lap.classList.add("selected");
+                    lap.classList.add("kivalasztott");
                     kivalsztottLap = lap;
-                        updateMove();
+                    frissites();
                     }
                 }
                });
                
             } 
-            //Assign tile id
             lap.id = idCount;
-           
-            //Increment for next tile
             idCount ++;
-            //Add tile class to all tiles
-            lap.classList.add("lap");
+           lap.classList.add("lap");
             if((lap.id > 17 && lap.id < 27) || (lap.id > 44 & lap.id < 54)) {
-                lap.classList.add("bottomBorder");
+                lap.classList.add("alsoSzegely");
             }
             if((lap.id + 1) % 9 == 3 || (lap.id + 1) % 9 == 6) {
-                lap.classList.add("rightBorder");
+                lap.classList.add("jobbSzegely");
             }
-            //Add tile to board
-            id("tabla").appendChild(lap); 
-           /*  console.log(tile) */
-        }
+           id("tabla").appendChild(lap); 
+               }
          
     }
 
-    function updateMove() {
-        // if a tile and a number is seeceted
-        if (kivalsztottLap && kivalsztottSzam){
-            //Set the tile to the corect number
+    function frissites() {
+            if (kivalsztottLap && kivalsztottSzam){
             kivalsztottLap.textContent = kivalsztottSzam.textContent;
-          // tf the numer matches the corresponding number in the solution key
           if(checkCorrect(kivalsztottLap)){
-              // Deselects the tile
-              kivalsztottLap.classList.remove("selected");
-              kivalsztottSzam.classList.remove("selected");
-              //Clear the selected variables
+              kivalsztottLap.classList.remove("kivalasztott");
+              kivalsztottSzam.classList.remove("kivalasztott");
               kivalsztottSzam = null;
               kivalsztottLap = null;
               pontszam++;
               id("pontszam").textContent = "Pontszám: " + pontszam;
 
-              //If the number does not match the solution kell
-
-          }else{
-              //disable selecting new number for one second 
-              tiltSelect = true;
+            }else{
+              kivalaszttilt = true;
               kivalsztottLap.classList.add("incorrect");
-          //run in one second
-          setTimeout(function(){
-//subtract lives by one
-eletek--;
-//IF NO LIVES LEFT END THE GAME
-if(eletek ===0) 
-{endGame();}
-else{
-    //If lives is not equal to zero
-    //Update lives text
+             setTimeout(function(){
+            eletek--;
+            if(eletek ===0) 
+    {endGame();}
+    else{
+    
     id("eletek").textContent = "Életek száma: " + eletek;
-    tiltSelect = false;
+    kivalaszttilt = false;
 }
-// Restore tile color and remove selected from both
-kivalsztottLap.classList.remove("incorrect");
-kivalsztottLap.classList.remove("selected");
- kivalsztottSzam.classList.remove("selected");
- //Clear the tiles text and clear selected variable
- kivalsztottLap.textContent = "";
- kivalsztottLap = null;
- kivalsztottSzam = null;
+
+    kivalsztottLap.classList.remove("incorrect");
+    kivalsztottLap.classList.remove("kivalasztott");
+    kivalsztottSzam.classList.remove("kivalasztott");
+ 
+    kivalsztottLap.textContent = "";
+     kivalsztottLap = null;
+    kivalsztottSzam = null;
           }, 1000);
             }
         }
@@ -216,7 +188,7 @@ kivalsztottLap.classList.remove("selected");
 
     function endGame(){
         
-        tiltSelect = true;
+        kivalaszttilt = true;
         clearTimeout(idozito);
      
         if(eletek ===0 || idoBeallitas ===0){
@@ -245,20 +217,16 @@ kivalsztottLap.classList.remove("selected");
        else return false;
     }
 
-    function clearPrevious(){
-        //Acces all of the tiles
+    function osszesTablaTorles(){
+        
         let lapok = qsa(".lap");
-        //Remove each tile
         for(let i = 0; i < lapok.length; i++){
             lapok[i].remove();
         }
-        // if there is a timer clear it
         if (idozito) clearTimeout(idozito);
-        //Deselect any numbers
         for(let i = 0; i < id("lehetsegesszamok").children.length; i++){
-            id("lehetsegesszamok").children[i].classList.remove("selected");
+            id("lehetsegesszamok").children[i].classList.remove("kivalasztott");
         }
-        //Clear selected variables
         kivalsztottLap = null;
         kivalsztottSzam = null;
 
@@ -292,7 +260,7 @@ kivalsztottLap.classList.remove("selected");
       return document.getElementById(id);
   }
 
-  function qs(selector){
+  function qs(selector){össz
       return document.querySelector(selector);
 
   }

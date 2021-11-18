@@ -7,7 +7,7 @@
   
   
   <section class="background">
-  <app-container classes="container-1 flex">
+  <app-container classes="container-2 flex">
      <ng-container *ngIf= "(lista$) | async as lista; else loadingOrError"> 
        <app-informacio class="elem" *ngFor="let elem of lista$ | async " [informacio]="elem" (getInformacio)="onGetInformacio($event)"></app-informacio>
       <br> 

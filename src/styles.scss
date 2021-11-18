@@ -187,7 +187,7 @@ p#idozito, p#eletek, p#pontszam{
 
 }
 
-a.selected{
+a.kivalasztott{
   background-color: lightblue;
   
 }
@@ -196,12 +196,12 @@ a.incorrect{
   color: red;
 }
 
-.rightBorder{
+.jobbSzegely{
   border-right: 4px solid black;
 
 }
 
- .bottomBorder {
+ .alsoSzegely {
   border-bottom: 4px solid black;
 } 
 

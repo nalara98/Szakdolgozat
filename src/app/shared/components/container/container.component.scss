@@ -1,37 +1,37 @@
-.container-1 {
+.container-2 {
     margin-left: auto;
     margin-right: auto;
   }
   
   @media (min-width: 768px) {
-    .container-1 {
-      padding-right: 15px;
-      padding-left: 15px;
+    .container-2 {
+      padding-right: 30px;
+      padding-left: 30px;
       padding-top: 24px;
     }
   }
   
   @media (min-width: 991px) {
-    .container-1 {
-      width: calc(961px - 230px);
+    .container-2 {
+      width: calc(961px - 500px);
     }
   }
   
   @media (min-width: 1200px) {
-    .container-1 {
-      width: calc(1170px - 230px);
+    .container-2 {
+      width: calc(1170px - 500px);
     }
   }
   
-  .container-1.no-padding {
+  .container-2.no-padding {
     padding: 0;
   }
   
-  .container-1.no-padding-top {
+  .container-2.no-padding-top {
     padding-top: 0;
   }
   
-  .container-1.flex {
+  .container-2.flex {
     
     display: flex;
     flex-wrap: wrap;
