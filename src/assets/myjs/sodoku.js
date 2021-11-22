@@ -210,7 +210,6 @@ const konnyu = [
        else if (id("nehezseg-2").checked) solution = kozepes[1];
        else solution = nehez[1];
 
-       //If tile's number is equal to solution's number
        if(solution.charAt(lap.id) === lap.textContent) return true;
        else return false;
     }
