@@ -22,14 +22,7 @@ export class LeirasokAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*  bezaras(): void{
-    if(this.form.valid){ /*ha valid dobjon visszaadatot ha nem zárja be.  
-    this.dialogReferenc.close(this.form.value); /* ennek a formnak a valueja az informaciok.  
 
-  }
-  this.dialogReferenc.close();
-  
-} */
 
   
  
