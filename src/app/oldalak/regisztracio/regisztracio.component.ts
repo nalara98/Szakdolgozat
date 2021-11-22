@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -37,6 +37,10 @@ export class RegisztracioComponent {
 
   }
  
+  
+  @HostListener('document: keydown.enter') onKeydownHandler(){
+    this.regisztracio(); /* ha lenyomjuk az enter bejelentkezik */
+  }
 
   regisztracio(): void {
     

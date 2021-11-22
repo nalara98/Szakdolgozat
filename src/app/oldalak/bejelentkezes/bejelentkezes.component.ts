@@ -31,7 +31,7 @@ export class BejelentkezesComponent implements OnInit {
   componentName = "bejelentkezes"; /* unit teszt */
   constructor(private rout: Router, private authServ: AuthenticationService) { }
 
-  ngOnInit():void{ /* rákényszerítjük a felhasználót hogy újra bejelentkezen. */
+  ngOnInit():void{ 
     this.kijelentkezet
 
   }
