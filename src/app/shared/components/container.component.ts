@@ -9,7 +9,7 @@ export class ContainerComponent {
   @Input() classes: string;
 
   constructor() {
-    this.classes = 'container-2';
+    this.classes = 'container';
   }
 
 }
