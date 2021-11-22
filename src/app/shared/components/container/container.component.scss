@@ -5,21 +5,21 @@
   
   @media (min-width: 768px) {
     .container-2 {
-      padding-right: 30px;
-      padding-left: 30px;
+      padding-right: 15px;
+      padding-left: 15px;
       padding-top: 24px;
     }
   }
   
   @media (min-width: 991px) {
     .container-2 {
-      width: calc(961px - 500px);
+      width: calc(961px - 230px);
     }
   }
   
   @media (min-width: 1200px) {
     .container-2 {
-      width: calc(1170px - 500px);
+      width: calc(1170px - 280px);
     }
   }
   

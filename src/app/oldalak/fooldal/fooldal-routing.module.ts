@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RouteGuard } from 'src/app/shared/routeguards/route-guard';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'splash', pathMatch: 'full' },
+    { path: '', redirectTo: 'main', pathMatch: 'full' },
     {
         path: '',
         component: FooldalComponent,

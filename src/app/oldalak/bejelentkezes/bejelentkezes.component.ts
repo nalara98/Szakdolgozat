@@ -20,7 +20,7 @@ export class BejelentkezesComponent implements OnInit {
   hibaUzenet = '';
   hibaLista: any = {
     user: () => 'Hibás E-mail cím vagy jelszó.',
-    server: () => 'A szolgáltatás nem elérhető.',
+    server: () => 'A szolgáltatás nem elérhető.Ellenőrizze az internet kapcsolatot',
     false: () => ''
   }; /* hiba kezelés */
 

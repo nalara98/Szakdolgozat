@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [InformacioComponent],
   imports: [
-    CommonModule, MatCardModule, MatIconModule, MatButtonModule 
+     MatButtonModule ,MatCardModule, MatIconModule,CommonModule, 
   ],
   exports: [InformacioComponent]
 })

@@ -52,7 +52,7 @@ componantName = "informacioklist"
 
 openLeirasok(): void {
   const dialogReferenc = this.dialog.open(LeirasokAddComponent, {});
-  // tslint:disable-next-line: deprecation
+
   dialogReferenc.afterClosed().subscribe((informacio: Informacio) => {
     console.log(informacio);
     if (informacio?.title) {
