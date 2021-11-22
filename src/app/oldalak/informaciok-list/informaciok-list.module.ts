@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InformaciokListRoutingModule } from './informaciok-list-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { InformacioModule } from '../informacio/informacio.module';
-import { ContainerModule } from 'src/app/shared/components/container/container.module';
+import { ContainerModule } from 'src/app/shared/components/container.module';
 import {  MatIconModule } from '@angular/material/icon';
 import { LeirasokAddModule } from '../leirasok-add/leirasok-add.module';
 import { InformaciokListComponent } from './informaciok-list.component';

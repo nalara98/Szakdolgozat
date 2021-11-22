@@ -9,7 +9,7 @@ import { LeirasRoutingModule} from './leiras-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeirasComponent } from './leiras.component';
-import { ContainerModule } from 'src/app/shared/components/container/container.module';
+import { ContainerModule } from 'src/app/shared/components/container.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 

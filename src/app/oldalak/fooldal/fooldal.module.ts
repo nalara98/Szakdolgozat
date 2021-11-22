@@ -14,7 +14,7 @@ import { LeirasokAddModule } from '../leirasok-add/leirasok-add.module';
 import { FooldalRoutingModule } from './fooldal-routing.module';
 import { MatRipple, MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ContainerModule } from 'src/app/shared/components/container/container.module';
+import { ContainerModule } from 'src/app/shared/components/container.module';
 
 
 
