@@ -1,9 +1,5 @@
-import { style } from '@angular/animations';
-import { Time } from '@angular/common';
-import { identifierModuleUrl } from '@angular/compiler';
-import { applySourceSpanToExpressionIfNeeded, variable } from '@angular/compiler/src/output/output_ast';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -56,13 +52,17 @@ export class JatekComponent  {
   ]
   files = [
   {
-  url: './assets/zenek/Best - Epic.mp3',
+  url: './assets/zenek/first.mp3',
   name: 'Első zene'
   },
 
   {
-    url: './assets/zenek/Mandy - RaggaDrop (Official Video Clip).mp3',
+    url: './assets/zenek/second.mp3',
     name: 'Második zene'
+    },
+    {
+    url: './assets/zenek/third.mp3',
+    name: 'Harmadik zene'
     }
 ];
 

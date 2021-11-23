@@ -1,12 +1,8 @@
-import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component }from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { INFORMACIOK } from 'src/app/shared/database/informacio.database';
 import { KATEGORIAK } from 'src/app/shared/database/kategoria.database';
-import { Kategoria } from 'src/app/shared/models/kategoria.model';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map, shareReplay } from 'rxjs/operators';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { ThemeService } from 'src/app/services/thema.service';
 
 

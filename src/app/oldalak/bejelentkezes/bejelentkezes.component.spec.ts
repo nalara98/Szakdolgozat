@@ -1,7 +1,4 @@
-import { Injectable, InjectionToken } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { MatMenuModule } from '@angular/material/menu';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject, of } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { KATEGORIAK } from 'src/app/shared/database/kategoria.database';
 
 

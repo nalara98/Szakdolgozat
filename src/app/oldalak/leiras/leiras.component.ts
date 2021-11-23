@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { BaseService } from 'src/app/services/tanacsok.service';
@@ -6,7 +6,6 @@ import { Location } from '@angular/common';
 import { Informacio } from 'src/app/shared/models/informacio.model';
 import { catchError } from 'rxjs/operators';
 import { INFORMACIOK } from 'src/app/shared/database/informacio.database';
-import { LeirasokAddComponent } from '../leirasok-add/leirasok-add.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 

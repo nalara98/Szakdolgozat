@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError,  debounceTime, map, startWith } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { BaseService } from 'src/app/services/tanacsok.service';
 import { Informacio } from 'src/app/shared/models/informacio.model';
 import { LeirasokAddComponent } from '../leirasok-add/leirasok-add.component';

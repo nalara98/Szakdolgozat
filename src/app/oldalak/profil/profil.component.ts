@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
-
-
-
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
-
 import { getAuth } from "firebase/auth";
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
