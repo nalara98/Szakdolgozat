@@ -15,7 +15,7 @@ export const KATEGORIAK: Kategoria[] = [
         title: 'Játék',
         icon: 'games',
         value: 'jatek',
-        color: 'cyan',
+        color: 'teal',
         url:'/fooldal/jatek'
     },
 
